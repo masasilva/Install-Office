@@ -260,10 +260,10 @@ Remove-Item -Path HKCU:\SOFTWARE\Microsoft\Office\16.0\Common\ExperimentEcs -Rec
 if (-not (Test-Path -Path "$PSScriptRoot\setup.exe"))
 {
 	$Parameters = @{
-		Uri              = "https://www.microsoft.com/en-us/download/confirmation.aspx?id=49117"
+		Uri              = "https://www.microsoft.com/en-us/download/details.aspx?id=49117"
 		UseBasicParsing  = $true
 	}
-	$ODTURL = ((Invoke-WebRequest @Parameters).Links | Where-Object {$_.outerHTML -match "click here to download manually"}).href
+	$ODTURL = ((Invoke-WebRequest @Parameters).Links | Where-Object {$_.href -match "officedeploymenttool"}).href
 	$Parameters = @{
 		Uri             = $ODTURL
 		OutFile         = "$PSScriptRoot\officedeploymenttool.exe"
