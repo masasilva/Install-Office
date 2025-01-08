@@ -4,13 +4,14 @@
 
 ## How-to
 
-* Change execution policy
+* Download the latest archive and expand it;
+* Open PowerShell console as admin and change execution policy
 
   ```powershell
   Set-ExecutionPolicy -ExecutionPolicy Bypass -Force
   ```
 
-* Choose which Office to download
+* Open folder in PowerShell console and choose which Office to download
 
   ```powershell
   .\Download.ps1 -Branch ProPlus2019Retail -Channel Current -Components Word, Excel, PowerPoint
@@ -19,7 +20,7 @@
   .\Download.ps1 -Branch O365ProPlusRetail -Channel Current -Components Excel, OneDrive, Outlook, PowerPoint, Teams, Word
   ```
 
-* Run `Install.ps1` from context menu to install Office you downloaded (no need to run PowerShell as admin, because `setup.exe` will ask to elevate the installatio process automatically)
+* Run `.\Install.ps1` from context menu to install Office you downloaded;
 
 ## Addendum
 
