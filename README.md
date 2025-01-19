@@ -1,5 +1,7 @@
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Q5Q51QUJC)
 
+<img src="https://github.com/user-attachments/assets/2c4da2e2-6d5c-468b-b677-8b4fc3db8b7c" width='600'>
+
 ## Download Microsoft 365 (Office 365) via ODT with PowerShell 
 
 ## How-to
@@ -19,6 +21,9 @@
   .\Download.ps1 -Branch ProPlus2024Volume -Channel PerpetualVL2024 -Components Excel, OneDrive, PowerPoint, Word
   .\Download.ps1 -Branch O365ProPlusRetail -Channel Current -Components Excel, OneDrive, Outlook, PowerPoint, Teams, Word
   ```
+
+  * There won't be any messages in console while Office is being downloaded;
+  * When Office is downloaded you can find a new `Office` folder in script folder.
 
 * Run `.\Install.ps1` from context menu to install Office you downloaded;
 
