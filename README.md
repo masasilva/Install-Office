@@ -24,7 +24,7 @@
 
   * There won't be any messages in console while Office is being downloaded;
   * When Office is downloaded you can find a new `Office` folder in script folder.
-
+* Do not move downloaded `Office` folder to another location as `Install.ps1` script has a link to `setup.exe`.
 * Run `.\Install.ps1` from context menu to install Office you downloaded;
 
 ## Addendum
