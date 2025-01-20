@@ -272,6 +272,7 @@ if (-not (Test-Path -Path "$PSScriptRoot\setup.exe"))
 }
 
 # Start downloading to the Office folder
+Write-Verbose -Message "Downloading... Please do not close any console windows." -Verbose
 Start-Process -FilePath "$PSScriptRoot\setup.exe" -ArgumentList "/download `"$PSScriptRoot\Config.xml`"" -Wait
 
 if ($Script:RegionChanged)
@@ -280,3 +281,5 @@ if ($Script:RegionChanged)
 	Set-WinHomeLocation -GeoId $Script:Region
 	Write-Warning -Message "Region changed to original one"
 }
+
+Write-Verbose -Message "Office downloaded. Please run Install.ps1 file with administrator privileges." -Verbose
