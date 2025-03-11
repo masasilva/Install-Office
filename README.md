@@ -7,6 +7,31 @@
 ## How-to
 
 * Download the latest archive and expand it;
+* Configure which components to download
+  * Branch:
+    * ProPlus2019Retail
+    * ProPlus2021Volume
+    * ProPlus2024Volume
+    * O365ProPlusRetail
+  * Channel
+    * Current
+    * PerpetualVL2021
+    * PerpetualVL2024
+    * SemiAnnual
+  * Components
+    * Access
+    * OneDrive
+    * Outlook
+    * Word
+    * Excel
+    * OneNote
+    * Publisher
+    * PowerPoint
+    * Teams
+    * ProjectPro2019Volume
+    * ProjectPro2021Volume
+    * ProjectPro2024Volume
+
 * Open PowerShell console as admin and change execution policy
 
   ```powershell

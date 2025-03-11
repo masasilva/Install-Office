@@ -9,7 +9,7 @@
 	Choose Office channel: 2019, 2021, 2024, and 365
 
 	.PARAMETER Components
-	Choose Office components: Access, OneDrive, Outlook, Word, Excel, PowerPoint, Teams, OneNote, Publisher
+	Choose Office components: Access, OneDrive, Outlook, Word, Excel, PowerPoint, Teams, OneNote, Publisher, Project 2019/2021/2024
 
 	.EXAMPLE Download Office 2019 with the Word, Excel, PowerPoint components
 	Download.ps1 -Branch ProPlus2019Retail -Channel Current -Components Word, Excel, PowerPoint
@@ -46,7 +46,7 @@ param
 	$Channel,
 
 	[Parameter(Mandatory = $true)]
-	[ValidateSet("Access", "OneDrive", "Outlook", "Word", "Excel", "OneNote", "Publisher", "PowerPoint", "Teams")]
+	[ValidateSet("Access", "OneDrive", "Outlook", "Word", "Excel", "OneNote", "Publisher", "PowerPoint", "Teams", "ProjectPro2019Volume", "ProjectPro2021Volume", "ProjectPro2024Volume")]
 	[string[]]
 	$Components
 )
@@ -213,7 +213,7 @@ foreach ($Component in $Components)
 			$Node = $Config.SelectSingleNode("//ExcludeApp[@ID='OneNote']")
 			$Node.ParentNode.RemoveChild($Node)
 		}
-  		Publisher
+		Publisher
 		{
 			$Node = $Config.SelectSingleNode("//ExcludeApp[@ID='Publisher']")
 			$Node.ParentNode.RemoveChild($Node)
@@ -231,6 +231,27 @@ foreach ($Component in $Components)
 				Verbose         = $true
 			}
 			Invoke-RestMethod @Parameters
+		}
+		ProjectPro2019Volume
+		{
+			$ProjectNode = $Config.Configuration.Add.AppendChild($Config.CreateElement("Product"))
+			$ProjectNode.SetAttribute("ID","ProjectPro2019Volume")
+			$ProjectElement = $ProjectNode.AppendChild($Config.CreateElement("Language"))
+			$ProjectElement.SetAttribute("ID","MatchOS")
+		}
+		ProjectPro2021Volume
+		{
+			$ProjectNode = $Config.Configuration.Add.AppendChild($Config.CreateElement("Product"))
+			$ProjectNode.SetAttribute("ID","ProjectPro2021Volume")
+			$ProjectElement = $ProjectNode.AppendChild($Config.CreateElement("Language"))
+			$ProjectElement.SetAttribute("ID","MatchOS")
+		}
+		ProjectPro2024Volume
+		{
+			$ProjectNode = $Config.Configuration.Add.AppendChild($Config.CreateElement("Product"))
+			$ProjectNode.SetAttribute("ID","ProjectPro2024Volume")
+			$ProjectElement = $ProjectNode.AppendChild($Config.CreateElement("Language"))
+			$ProjectElement.SetAttribute("ID","MatchOS")
 		}
 	}
 }
