@@ -1,5 +1,3 @@
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Q5Q51QUJC)
-
 <img src="https://github.com/user-attachments/assets/2c4da2e2-6d5c-468b-b677-8b4fc3db8b7c" width='600'>
 
 ## Download Microsoft 365 (Office 365) via ODT with PowerShell 
